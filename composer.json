@@ -1,0 +1,17 @@
+{
+  "name": "mahathir/rail-mvc",
+  "description": "the reconstruction of a non-MVC PHP project into an MVC architecture",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "Mahathir\\RailMvc\\": "app/"
+    }
+  },
+  "authors": [
+    {
+      "name": "emha arch",
+      "email": "mhmmdmhthr@gmail.com"
+    }
+  ],
+  "require": {}
+}
