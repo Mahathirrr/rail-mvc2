@@ -32,7 +32,7 @@ class HomeController
     public function about()
     {
         $page = $this->pageService->getPageByType('aboutus');
-        View::render('Home/about.php', ['page' => $page]);
+        View::render('Home/about', ['page' => $page]);
     }
 
     public function viewPass()
@@ -45,14 +45,14 @@ class HomeController
     {
         $searchData = $_POST['searchdata'];
         $passes = $this->passService->getPassesByNumber($searchData);
-        View::render('Home/download-pass.php', ['passes' => $passes, 'searchData' => $searchData]);
+        View::render('Home/download-pass', ['passes' => $passes, 'searchData' => $searchData]);
     }
 
     public function viewPassDetail()
     {
         $passId = $_GET['viewid'];
         $pass = $this->passService->getPassById($passId);
-        View::render('Home/view-pass-detail.php', ['pass' => $pass]);
+        View::render('Home/view-pass-detail', ['pass' => $pass]);
     }
 
     // public function downloadPass()

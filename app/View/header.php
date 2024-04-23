@@ -13,12 +13,12 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <div class="w3menu navbar-right">
                             <ul class="nav navbar">
-                                <li><a href="index.php" class="active">Home</a></li>
-                                <li><a href="about.php">About</a></li>
+                                <li><a href="index" class="active">Home</a></li>
+                                <li><a href="about">About</a></li>
 
-                                <li><a href="contact.php">Contact</a></li>
-                                <li><a href="download-pass.php">View Pass</a></li>
-                                <li><a href="admin/index.php">Admin</a></li>
+                                <li><a href="contact">Contact</a></li>
+                                <li><a href="download-pass">View Pass</a></li>
+                                <li><a href="admin/index">Admin</a></li>
                             </ul>
                         </div>
                         <div class="clearfix"> </div>
