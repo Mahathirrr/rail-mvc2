@@ -2,26 +2,26 @@
 
 namespace Mahathir\RailMvc\Service;
 
-use Mahathir\RailMvc\Model\Pass;
+use Mahathir\RailMvc\Domain\Pass;
 use Mahathir\RailMvc\Repository\PassRepository;
 
 class PassService
 {
-    private $passRepository;
+    private PassRepository $passRepository;
 
-    public function __construct()
+    public function __construct(PassRepository $passRepository)
     {
-        $this->passRepository = new PassRepository();
+        $this->passRepository = $passRepository;
     }
 
-    public function getAllPasses(): array
+    public function getAllPasses(): Pass
     {
         return $this->passRepository->findAll();
     }
 
-    public function searchPasses(string $searchData): array
+    public function getPassesByNumber(string $passNumber): Pass
     {
-        return $this->passRepository->findByNumber($searchData);
+        return $this->passRepository->findByNumber($passNumber);
     }
 
     public function getPassById(int $passId): ?Pass

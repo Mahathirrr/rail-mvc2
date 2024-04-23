@@ -3,37 +3,36 @@
 namespace Mahathir\RailMvc\Repository;
 
 use Mahathir\RailMvc\Config\Database;
-use Mahathir\RailMvc\Model\Pass;
-use Mahathir\RailMvc\Model\Page;
+use Mahathir\RailMvc\Domain\Pass;
 
 class PassRepository
 {
-    private $connection;
+    private \PDO $connection;
 
-    public function __construct()
+    public function __construct(\PDO $connection)
     {
-        $this->connection = Database::getConnection();
+        $this->connection = $connection;
     }
 
-    public function findAll(): array
+    public function findAll(): ?Pass
     {
-        $statement = $this->connection->query("SELECT * FROM Pass");
-        return $statement->fetchAll(\PDO::FETCH_CLASS, Pass::class);
+        $statement = $this->connection->query("SELECT * FROM tblpass");
+        $result = $statement->fetchAll(Pass::class);
+        return $result ?: null;
     }
 
-    public function findByNumber(string $passNumber): array
+    public function findByNumber(string $passNumber): ?Pass
     {
-        $statement = $this->connection->prepare("SELECT * FROM Pass WHERE PassNumber LIKE :passNumber");
-        $statement->bindValue(':passNumber', $passNumber . '%');
-        $statement->execute();
-        return $statement->fetchAll(\PDO::FETCH_CLASS, Pass::class);
+        $statement = $this->connection->prepare("SELECT * FROM tblpass WHERE PassNumber LIKE ?");
+        $statement->execute([$passNumber . '%']);
+        $result = $statement->fetchAll(Pass::class);
+        return $result ?: null;
     }
 
     public function findById(int $passId): ?Pass
     {
-        $statement = $this->connection->prepare("SELECT * FROM Pass WHERE ID = :id");
-        $statement->bindValue(':id', $passId);
-        $statement->execute();
+        $statement = $this->connection->prepare("SELECT * FROM tblpass WHERE ID = ?");
+        $statement->execute([$passId]);
         $result = $statement->fetchObject(Pass::class);
         return $result ?: null;
     }

@@ -1,29 +1,10 @@
 <?php
- if(isset($_POST['submit']))
-  {
- $name=$_POST['name'];
-    $email=$_POST['email'];
-    $message=$_POST['message'];
-
-$sql="insert into tblcontact(Name,Email,Message)values(:name,:email,:message)";
-$query=$dbh->prepare($sql);
-$query->bindParam(':name',$name,PDO::PARAM_STR);
-$query->bindParam(':email',$email,PDO::PARAM_STR);
-$query->bindParam(':message',$message,PDO::PARAM_STR);
- $query->execute();
-
-   $LastInsertId=$dbh->lastInsertId();
-   if ($LastInsertId>0) {
-   echo "<script>alert('Your message was sent successfully!.');</script>";
-echo "<script>window.location.href ='contact.php'</script>";
-  }
-  else
-    {
-         echo '<script>alert("Something Went Wrong. Please try again")</script>';
-    }
-}
+/**
+ * @var array $model
+ */
+$page = $model['page'];
 ?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Railway Pass Management System || Contact Us Page</title>
@@ -44,7 +25,7 @@ echo "<script>window.location.href ='contact.php'</script>";
 	<div class="agileits-banner">
 		<div class="bnr-agileinfo">
 			<!-- navigation -->
-			<?php include_once('includes/header.php');?>
+			<?php include_once('../header.php');?>
 			<!-- //navigation -->
 			<!-- banner-text -->
 			<div class="banner-text agileinfo about-bnrtext">
@@ -104,8 +85,8 @@ echo "<script>window.location.href ='contact.php'</script>";
 	</script>
 	<!-- //js -->
 	<!-- start-smooth-scrolling -->
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript" src="../Assets/js/move-top.js"></script>
+	<script type="text/javascript" src="../Assets/js/easing.js"></script>
 	<script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){

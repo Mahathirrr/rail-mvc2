@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Mahathir\\RailMvc\\' => array($baseDir . '/src'),
+    'Mahathir\\RailMvc\\' => array($baseDir . '/app'),
 );

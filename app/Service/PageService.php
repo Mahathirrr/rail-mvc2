@@ -6,10 +6,10 @@ use Mahathir\RailMvc\Domain\Page;
 use Mahathir\RailMvc\Repository\PageRepository;
 
 class PageService {
-    private $pageRepository;
+    private PageRepository $pageRepository;
 
-    public function __construct() {
-        $this->pageRepository = new PageRepository;
+    public function __construct(PageRepository $pageRepository) {
+        $this->pageRepository = $pageRepository;
     }
 
     public function getPageByType(string $type): ?Page {

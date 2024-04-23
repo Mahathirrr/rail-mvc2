@@ -2,23 +2,21 @@
 
 namespace Mahathir\RailMvc\Repository;
 
-use Mahathir\RailMvc\Config\Database;
-use Mahathir\RailMvc\Model\Page;
+use Mahathir\RailMvc\Domain\Page;
 
 class PageRepository
 {
-    private $connection;
+    private \PDO $connection;
 
-    public function __construct()
+    public function __construct(\PDO $connection)
     {
-        $this->connection = Database::getConnection();
+        $this->connection = $connection;
     }
 
     public function findByType(string $type): ?Page
     {
-        $statement = $this->connection->prepare("SELECT * FROM Page WHERE PageType = :type");
-        $statement->bindValue(':type', $type);
-        $statement->execute();
+        $statement = $this->connection->prepare("SELECT * FROM tblpage WHERE PageType = ?");
+        $statement->execute([$type]);
         $result = $statement->fetchObject(Page::class);
         return $result ?: null;
     }

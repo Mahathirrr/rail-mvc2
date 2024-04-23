@@ -5,9 +5,9 @@
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Custom Theme files -->
-<link href="../Assets/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-<link href="../Assets/css/style.css" type="text/css" rel="stylesheet" media="all">
-<link href="../Assets/css/font-awesome.css" rel="stylesheet">		<!-- font-awesome icons -->
+<link href="Assets/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="Assets/css/style.css" type="text/css" rel="stylesheet" media="all">
+<link href="Assets/css/font-awesome.css" rel="stylesheet">
 <!-- //Custom Theme files -->
 <!-- web-fonts -->
 <link href="//fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700" rel="stylesheet">
@@ -19,7 +19,7 @@
 	<div class="agileits-banner">
 		<div class="bnr-agileinfo">
 			<!-- navigation -->
-			<?php include_once('../header.php');?>
+			<?php include_once(__DIR__ . '/../header.php'); ?>
 			<!-- //navigation -->
 			<!-- banner-text -->
 			<div class="banner-text agileinfo about-bnrtext">
@@ -36,21 +36,21 @@
 	<div class="welcome" id="welcome">
         <div class="container">
             <div class="agileits-title">
-                <h3><?= $page->PageTitle ?></h3>
+                <h3><?= $model['PageTitle'] ?></h3>
             </div>
             <div class="welcomerow-agileinfo">
-                <p><?= $page->PageDescription ?></p>
+                <p><?= $model['PageDescription'] ?></p>
             </div>
         </div>
     </div>
 	<!-- //welcome -->
 
 
-<?php include_once('../footer.php');?>
+	<?php include_once(__DIR__ . '/../footer.php'); ?>
 	<!-- js -->
-	<script src="../Assets/js/jquery-2.2.3.min.js"></script>
-	<script src="../Assets/js/SmoothScroll.min.js"></script>
-	<script src="../Assets/js/jarallax.js"></script>
+<script src="Assets/js/jquery-2.2.3.min.js"></script>
+<script src="Assets/js/SmoothScroll.min.js"></script>
+<script src="Assets/js/jarallax.js"></script>
 	<script type="text/javascript">
 		/* init Jarallax */
 		$('.jarallax').jarallax({
@@ -61,11 +61,11 @@
 	</script>
 	<!-- //js -->
 	<!-- Progressive-Effects-Animation-JavaScript -->
-	<script type="text/javascript" src="js/numscroller-1.0.js"></script>
+	<script type="text/javascript" src="../Assets/js/numscroller-1.0.js"></script>
 	<!-- //Progressive-Effects-Animation-JavaScript -->
 	<!-- start-smooth-scrolling -->
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript" src="../Assets/js/move-top.js"></script>
+	<script type="text/javascript" src="../Assets/js/easing.js"></script>
 	<script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){
@@ -96,6 +96,6 @@
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../Assets/js/bootstrap.js"></script>
+	<script src="Assets/js/bootstrap.js"></script>
 </body>
 </html>

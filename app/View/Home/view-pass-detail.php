@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Rail Pass Management System || View Pass Page</title>
@@ -51,55 +50,55 @@
                 <div class="table-responsive" id="divToPrint">
                     <table border="2" class="table table-bordered" style="font-size: 18px;">
                         <tr align="center">
-                            <td colspan="6" style="font-size:20px;color:blue">Pass ID: <?= $pass->PassNumber ?></td>
+                            <td colspan="6" style="font-size:20px;color:blue">Pass ID: <?= $model['PassNumber']?></td>
                         </tr>
                         <tr>
                             <th scope>Category</th>
-                            <td colspan="3"><?= $pass->Category ?></td>
+                            <td colspan="3"><?= $model['Category']?></td>
                         </tr>
                         <tr>
                             <th scope>Photo</th>
-                            <td colspan="3"><img src="admin/images/<?= $pass->ProfileImage ?>" width="50" height="50"></td>
+                            <td colspan="3"><img src="admin/images/<?= $model['ProfileImage'] ?>" width="50" height="50"></td>
                         </tr>
                         <tr>
                             <th scope>Full Name</th>
-                            <td><?= $pass->FullName ?></td>
+                            <td><?= $model['FullName'] ?></td>
                             <th scope>Class Avail</th>
-                            <td><?= $pass->TrainClass ?></td>
+                            <td><?= $model['TrainClass'] ?></td>
                         </tr>
                         <tr>
                             <th scope>Mobile Number</th>
-                            <td><?= $pass->ContactNumber ?></td>
+                            <td><?= $model['ContactNumber'] ?></td>
 							<th scope>Email</th>
-							<td?><?= $pass->Email ?></td>
+							<td><?= $model['Email'] ?></td>
 						</tr>
 						<tr>
 							<th scope>Identify Type </th>
-							<td><?= $pass->IdentityType ?></td>
+							<td><?= $model['IdentityType'] ?></td>
 							<th scope>Identity Card Number </th>
-							<td><?= $pass->IdentityCardno ?></td>
+							<td><?= $model['IdentityCardno'] ?></td>
 						</tr>
 						<tr>
 							<th scope>Source</th>
-							<td><?= $pass->Source ?></td>
+							<td><?= $model['Source'] ?></td>
 							<th scope>Destination</th>
-							<td><?= $pass->Destination ?></td>
+							<td><?= $model['Destination'] ?></td>
 						</tr>
 						<tr>
 							<th scope>From Date</th>
-							<td><?= $pass->FromDate ?></td>
+							<td><?= $model['FromDate'] ?></td>
 							<th scope>To Date</th>
-							<td><?= $pass->ToDate ?></td>
+							<td><?= $model['ToDate'] ?></td>
 						</tr>
 						<tr>
 							<th scope>Cost</th>
-							<td><?= $pass->Cost ?></td>
+							<td><?= $model['Cost'] ?></td>
 							<th scope>Way Type</th>
-							<td><?= $pass->wayType ?></td>
+							<td><?= $model['wayType'] ?></td>
 						</tr>
 						<tr>
 							<th scope>Pass Creation Date</th>
-							<td colspan="3"><?= $pass->PasscreationDate ?></td>
+							<td colspan="3"><?= $model['PasscreationDate'] ?></td>
 						</tr>
 				   </table>
 				   <input type="button" style="padding-right: 20px" class="btn btn-primary" value="print" onclick="PrintDiv();" /></p>
@@ -125,11 +124,11 @@
 	</script>
 	<!-- //js -->
 	<!-- Progressive-Effects-Animation-JavaScript -->
-	<script type="text/javascript" src="js/numscroller-1.0.js"></script>
+	<script type="text/javascript" src="../Assets/js/numscroller-1.0.js"></script>
 	<!-- //Progressive-Effects-Animation-JavaScript -->
 	<!-- start-smooth-scrolling -->
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript" src="../Assets/js/move-top.js"></script>
+	<script type="text/javascript" src="../Assets/js/easing.js"></script>
 	<script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){

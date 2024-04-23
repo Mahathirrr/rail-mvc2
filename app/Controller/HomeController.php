@@ -1,26 +1,32 @@
 <?php
 
-namespace Mahathir\RailMvc\App\Controller;
+namespace Mahathir\RailMvc\Controller;
 
 use Mahathir\RailMvc\App\View;
+use Mahathir\RailMvc\Config\Database;
+use Mahathir\RailMvc\Repository\PageRepository;
+use Mahathir\RailMvc\Repository\PassRepository;
 use Mahathir\RailMvc\Service\PassService;
 use Mahathir\RailMvc\Service\PageService;
 
 class HomeController
 {
-    private $passService;
-    private $pageService;
+    private PassService $passService;
+    private PageService $pageService;
 
-    public function __construct(PassService $passService, PageService $pageService)
+    public function __construct()
     {
-        $this->passService = $passService;
-        $this->pageService = $pageService;
+        $connection = Database::getConnection();
+        $passRepository = new PassRepository($connection);
+        $this->passService = new PassService($passRepository);
+
+        $pageRepository = new PageRepository($connection);
+        $this->pageService = new PageService($pageRepository);
     }
 
     public function index()
     {
-        $passes = $this->passService->getAllPasses();
-        View::render('Home/index.php', ['passes' => $passes]);
+        View::render('Home/index', []);
     }
 
     public function about()
@@ -31,14 +37,15 @@ class HomeController
 
     public function viewPass()
     {
-        View::render('Home/view-pass.php');
+        $passes = $this->passService->getAllPasses();
+        View::render('Home/view-pass', ['passes' => $passes]);
     }
 
     public function searchPass()
     {
         $searchData = $_POST['searchdata'];
-        $passes = $this->passService->searchPasses($searchData);
-        View::render('Home/view-pass.php', ['passes' => $passes, 'searchData' => $searchData]);
+        $passes = $this->passService->getPassesByNumber($searchData);
+        View::render('Home/download-pass.php', ['passes' => $passes, 'searchData' => $searchData]);
     }
 
     public function viewPassDetail()
@@ -48,9 +55,9 @@ class HomeController
         View::render('Home/view-pass-detail.php', ['pass' => $pass]);
     }
 
-    public function downloadPass()
-    {
-        // Tambahkan logika untuk mengunduh pass
-        View::render('Home/download-pass.php');
-    }
+    // public function downloadPass()
+    // {
+    //     $pass = $this->passService->getPassesByNumber($)
+    //     View::render('Home/download-pass.php', ['pass' => $pass]);
+    // }
 }

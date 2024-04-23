@@ -16,7 +16,7 @@ class ComposerStaticInita0bd61fd0f1e1baea3af5c50a5584917
     public static $prefixDirsPsr4 = array (
         'Mahathir\\RailMvc\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 

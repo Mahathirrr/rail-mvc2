@@ -1,20 +1,28 @@
 <?php
 
-namespace Mahathir\RailMvc\App\Controller;
+namespace Mahathir\RailMvc\Controller;
 
 use Mahathir\RailMvc\App\View;
+use Mahathir\RailMvc\Config\Database;
+use Mahathir\RailMvc\Model\ContactRequest;
+use Mahathir\RailMvc\Repository\ContactRepository;
+use Mahathir\RailMvc\Repository\PageRepository;
 use Mahathir\RailMvc\Service\ContactService;
 use Mahathir\RailMvc\Service\PageService;
 
 class ContactController
 {
-    private $contactService;
-    private $pageService;
+    private ContactService $contactService;
+    private PageService $pageService;
 
-    public function __construct(ContactService $contactService, PageService $pageService)
+    public function __construct()
     {
-        $this->contactService = $contactService;
-        $this->pageService = $pageService;
+        $connection = Database::getConnection();
+        $contactRepository = new ContactRepository($connection);
+        $this->contactService = new ContactService($contactRepository);
+
+        $pageRepository = new PageRepository($connection);
+        $this->pageService = new PageService($pageRepository);
     }
 
     public function index()
@@ -25,12 +33,13 @@ class ContactController
 
     public function sendMessage()
     {
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $message = $_POST['message'];
+        $request = new ContactRequest();
+        $request->Name = $_POST['name'];
+        $request->Email = $_POST['email'];
+        $request->Message = $_POST['message'];
 
-        $this->contactService->saveMessage($name, $email, $message);
+        $this->contactService->saveMessage($request);
 
-        View::redirect('/contact');
+        View::redirect('Home/contact');
     }
 }

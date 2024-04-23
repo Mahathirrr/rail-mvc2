@@ -7,29 +7,19 @@ use Mahathir\RailMvc\Domain\Contact;
 
 class ContactRepository
 {
-    private $connection;
+    private \PDO $connection;
 
-    public function __construct()
+    public function __construct(\PDO $connection)
     {
-        $this->connection = Database::getConnection();
+        $this->connection = $connection;
     }
 
-    public function saveMessage(string $name, string $email, string $message): void
+    public function saveMessage(Contact $contact): Contact
     {
-        $contact = new Contact();
-        $contact->Name = $name;
-        $contact->Email = $email;
-        $contact->Message = $message;
-        $contact->EnquiryDate = new \DateTime();
-        $contact->IsRead = 0;
-
-        $sql = "INSERT INTO tblcontact (Name, Email, Message, EnquiryDate, IsRead) VALUES (:name, :email, :message, :enquiryDate, :isRead)";
-        $statement = $this->connection->prepare($sql);
-        $statement->bindValue(':name', $contact->Name);
-        $statement->bindValue(':email', $contact->Email);
-        $statement->bindValue(':message', $contact->Message);
-        $statement->bindValue(':enquiryDate', $contact->EnquiryDate->format('Y-m-d H:i:s'));
-        $statement->bindValue(':isRead', $contact->IsRead);
-        $statement->execute();
-    }
+        $statement = $this->connection->prepare("INSERT INTO tblcontact (Name, Email, Message, EnquiryDate, IsRead) VALUES (?, ?, ?, ?, ?)");
+        $statement->execute([
+            $contact->Name, $contact->Email, $contact->Message, $contact->EnquiryDate->format('Y-m-d H:i:s'), $contact->IsRead
+        ]);
+        return $contact;
+   }
 }
