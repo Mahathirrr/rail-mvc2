@@ -2,21 +2,20 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
+use Mahathir\RailMvc\App\Controller\HomeController;
+use Mahathir\RailMvc\App\Router;
+use Mahathir\RailMvc\Config\Database;
 
+Database::getConnection();
 
-use ProgrammerZamanNow\Belajar\PHP\MVC\App\Router;
-use ProgrammerZamanNow\Belajar\PHP\MVC\Config\Database;
-use ProgrammerZamanNow\Belajar\PHP\MVC\Controller\HomeController;
-use ProgrammerZamanNow\Belajar\PHP\MVC\Controller\UserController;
+// Home Controller
+Router::add('GET', '/', HomeController::class, 'index', []);
+Router::add('GET', '/about', HomeController::class, 'about', []);
+Router::add('GET', '/view-pass', HomeController::class, 'viewPass', []);
+Router::add('POST', '/view-pass', HomeController::class, 'searchPass', []);
+Router::add('GET', '/view-pass-detail', HomeController::class, 'viewPassDetail', []);
 
-// // set koneksi awal hingga akhir menggunakan production connection
-// Database::getConnection('prod');
+// Admin Controller
+// Tambahkan rute untuk AdminController sesuai kebutuhan
 
-// // Home Controller
-// Router::add('GET', '/', HomeController::class, 'index', []);
-
-// // User Controller
-// Router::add('GET', '/users/register', UserController::class, 'register', []);
-// Router::add('POST', '/users/register', UserController::class, 'postRegister', []);
-
-// Router::run();
+Router::run();

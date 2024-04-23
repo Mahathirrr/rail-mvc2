@@ -4,20 +4,20 @@ namespace Mahathir\RailMvc\Domain;
 
 class Pass {
     public int $ID;
-    public ?string $PassNumber;
-    public ?string $FullName;
-    public ?string $ProfileImage;
-    public ?int $ContactNumber;
-    public ?string $Email;
-    public ?string $IdentityType;
-    public ?string $IdentityCardno;
-    public ?string $Category;
-    public ?string $Source;
-    public ?string $Destination;
-    public ?string $TrainClass;
-    public ?string $FromDate;
-    public ?string $ToDate;
-    public ?string $wayType;
-    public ?int $Cost;
-    public ?\DateTime $PasscreationDate;
+    public ?string $PassNumber = null;
+    public ?string $FullName = null;
+    public ?string $ProfileImage = null;
+    public ?int $ContactNumber = null;
+    public ?string $Email = null;
+    public ?string $IdentityType = null;
+    public ?string $IdentityCardno = null;
+    public ?string $Category = null;
+    public ?string $Source = null;
+    public ?string $Destination = null;
+    public ?string $TrainClass = null;
+    public ?string $FromDate = null;
+    public ?string $ToDate = null;
+    public ?string $wayType = null;
+    public ?int $Cost = null;
+    public ?\DateTime $PasscreationDate = null;
 }

@@ -2,11 +2,12 @@
 
 namespace Mahathir\RailMvc\Domain;
 
-class Contact {
+class Contact
+{
     public int $ID;
-    public ?string $Name;
-    public ?string $Email;
-    public ?string $Message;
+    public ?string $Name = null;
+    public ?string $Email = null;
+    public ?string $Message = null;
     public \DateTime $EnquiryDate;
-    public ?int $IsRead;
+    public ?int $IsRead = null;
 }
