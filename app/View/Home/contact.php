@@ -72,9 +72,9 @@ $page = $model['page'];
 <?php include_once('../footer.php');?>
 
 	<!-- js -->
-	<script src="../Assets/js/jquery-2.2.3.min.js"></script>
-	<script src="../Assets/js/SmoothScroll.min.js"></script>
-	<script src="../Assets/js/jarallax.js"></script>
+	<script src="Assets/js/jquery-2.2.3.min.js"></script>
+	<script src="Assets/js/SmoothScroll.min.js"></script>
+	<script src="Assets/js/jarallax.js"></script>
 	<script type="text/javascript">
 		/* init Jarallax */
 		$('.jarallax').jarallax({
@@ -117,6 +117,6 @@ $page = $model['page'];
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../Assets/js/bootstrap.js"></script>
+    <script src="Assets/js/bootstrap.js"></script>
 </body>
 </html>

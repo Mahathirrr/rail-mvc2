@@ -4,9 +4,9 @@
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Custom Theme files -->
-<link href="../Assets/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-<link href="../Assets/css/style.css" type="text/css" rel="stylesheet" media="all">
-<link href="../Assets/css/font-awesome.css" rel="stylesheet">		<!-- font-awesome icons -->
+<link href="Assets/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="Assets/css/style.css" type="text/css" rel="stylesheet" media="all">
+<link href="Assets/css/font-awesome.css" rel="stylesheet">		<!-- font-awesome icons -->
 <!-- //Custom Theme files -->
 <!-- web-fonts -->
 <link href="//fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700" rel="stylesheet">
@@ -111,9 +111,9 @@
 
 <?php include_once('../footer.php');?>
 	<!-- js -->
-	<script src="../Assets/js/jquery-2.2.3.min.js"></script>
-	<script src="../Assets/js/SmoothScroll.min.js"></script>
-	<script src="../Assets/js/jarallax.js"></script>
+	<script src="Assets/js/jquery-2.2.3.min.js"></script>
+	<script src="Assets/js/SmoothScroll.min.js"></script>
+	<script src="Assets/js/jarallax.js"></script>
 	<script type="text/javascript">
 		/* init Jarallax */
 		$('.jarallax').jarallax({
@@ -159,6 +159,6 @@
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../Assets/js/bootstrap.js"></script>
+    <script src="Assets/js/bootstrap.js"></script>
 </body>
 </html>

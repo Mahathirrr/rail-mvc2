@@ -7,9 +7,9 @@
         function hideURLbar(){ window.scrollTo(0,1); }
     </script>
     <!-- Custom Theme files -->
-    <link href="../Assets/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-    <link href="../Assets/css/style.css" type="text/css" rel="stylesheet" media="all">
-    <link href="../Assets/css/font-awesome.css" rel="stylesheet">		<!-- font-awesome icons -->
+    <link href="Assets/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="Assets/css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link href="Assets/css/font-awesome.css" rel="stylesheet">		<!-- font-awesome icons -->
     <!-- //Custom Theme files -->
     <!-- web-fonts -->
     <link href="//fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700" rel="stylesheet">
@@ -131,11 +131,11 @@
     </script>
     <!-- //js -->
     <!-- Progressive-Effects-Animation-JavaScript -->
-    <script type="text/javascript" src="js/numscroller-1.0.js"></script>
+    <script type="text/javascript" src="Assets/js/numscroller-1.0.js"></script>
     <!-- //Progressive-Effects-Animation-JavaScript -->
     <!-- start-smooth-scrolling -->
-    <script type="text/javascript" src="js/move-top.js"></script>
-    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript" src="Assets/js/move-top.js"></script>
+    <script type="text/javascript" src="Assets/js/easing.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function($) {
             $(".scroll").click(function(event){
